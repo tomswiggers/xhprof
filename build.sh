@@ -26,7 +26,11 @@ acbuild --debug dep add quay.io/coreos/alpine-sh
 acbuild --debug run apk update
 acbuild --debug run apk add apache2
 acbuild --debug run apk add php
+acbuild --debug run apk add php-ctype
+acbuild --debug run apk add php-gd
 acbuild --debug run apk add php-apache2
+acbuild --debug run apk add graphviz
+acbuild --debug run apk add ttf-dejavu
 
 # Add a port for http traffic over port 80
 acbuild --debug port add http tcp 80
