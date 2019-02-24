@@ -1,3 +1,4 @@
+gc=$1
 uuid=`sudo rkt list | grep xhprof | grep running | cut -d$'\t' -f1`
 
 if [[ ! -z $uuid ]]
@@ -8,4 +9,7 @@ else
   echo "Pod is not running."
 fi
 
-#sudo rkt gc --grace-period=0s
+if [[ ! -z $gc ]]
+then
+  sudo rkt gc --grace-period=0s
+fi
