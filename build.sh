@@ -22,7 +22,7 @@ acbuild --debug set-name xhprof
 # Based on alpine
 acbuild --debug dep add quay.io/coreos/alpine-sh
 
-# Install nginx
+# Install PHP/apache
 acbuild --debug run apk update
 acbuild --debug run apk add apache2
 acbuild --debug run apk add php
