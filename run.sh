@@ -1,6 +1,7 @@
 dir=`pwd`
-dir=$dir"/src"
+source_dir=$dir"/src"
+image=$dir"/xhprof.aci"
 
 echo $dir
 
-sudo rkt --insecure-options=image run xhprof.aci --volume localhost,kind=host,source=$dir
+sudo systemd-run --slice=machine rkt --insecure-options=image run $image --volume localhost,kind=host,source=$source_dir
